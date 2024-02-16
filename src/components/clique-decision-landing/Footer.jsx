@@ -25,7 +25,7 @@ const Footer = () => {
       </div>
       <ul className="style-none footer-nav d-flex flex-wrap justify-content-center md-pt-10 md-pb-20">
         <li>
-          <Link to="/">Support</Link>
+          <Link to="/">Home</Link>
         </li>
         <li>
           <Link to="/">About us</Link>

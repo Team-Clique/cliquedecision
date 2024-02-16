@@ -7,7 +7,7 @@ const Login = () => {
   return (
     <div className="main-page-wrapper p0">
       <Helmet>
-        <title>Login || Deski-Saas & Software React Template</title>
+        <title>Login || Clique Decisions</title>
       </Helmet>
       {/* End Page SEO Content */}
       <div className="user-data-page clearfix d-lg-flex">
@@ -39,13 +39,13 @@ const Login = () => {
         <div className="form-wrapper">
           <div className="d-flex justify-content-between">
             <div className="logo">
-              <Link to="/project-management">
+              <Link to="/">
                 <img src="images/logo/deski_01.svg" alt="logo" />
               </Link>
             </div>
             <Link
               className="font-rubik go-back-button"
-              to="/project-management"
+              to="/"
             >
               Go to home
             </Link>

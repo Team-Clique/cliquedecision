@@ -3,7 +3,6 @@ import Scrollspy from "react-scrollspy";
 import { Link } from "react-router-dom";
 import Modal from "react-modal";
 import HeaderPopupForm from "../form/HeaderPopupForm";
-import MegaMenuLanding from "../header/mega-menu/MegaMenuLanding";
 
 Modal.setAppElement("#root");
 
@@ -41,7 +40,7 @@ const HeaderLandingFormSurvey = () => {
       >
         <div className="d-flex align-items-center">
           <div className="logo order-lg-1">
-            <Link to="/event-organizer">
+            <Link to="/">
               <img src="images/logo/deski_06.svg" alt="brand" />
             </Link>
           </div>
@@ -150,7 +149,7 @@ const HeaderLandingFormSurvey = () => {
         <Scrollspy
           className="navbar-nav"
           id="theme-menu-list"
-          items={["home", "feature", "product", "feedback", "pricing"]}
+          items={["home", "feature", "product", "product", "about", "contact"]}
           currentClassName="active"
           offset={-200}
         >
@@ -166,19 +165,20 @@ const HeaderLandingFormSurvey = () => {
           </li>
           <li className="nav-item">
             <a href="#product" className="nav-link" onClick={handleClick}>
-              Product
+              App
             </a>
           </li>
           <li className="nav-item">
-            <a href="#feedback" className="nav-link" onClick={handleClick}>
-              Feedback
+            <a href="#about" className="nav-link" onClick={handleClick}>
+              About
             </a>
           </li>
           <li className="nav-item">
-            <a href="#pricing" className="nav-link" onClick={handleClick}>
-              Pricing
+            <a href="#contact" className="nav-link" onClick={handleClick}>
+              Contact
             </a>
           </li>
+          
         </Scrollspy>
       </div>
       {/* Mobile Menu End */}
