@@ -27,7 +27,7 @@ const App = () => {
         <meta property="og:type" content="website" />
         <meta
           property="og:title"
-          content="Deski: Creative Saas & Software React Template"
+          content="Clique Decision: Create Decisions & Get Quick Results"
         />
         <meta
           name="keywords"
@@ -35,12 +35,11 @@ const App = () => {
         />
         <meta
           name="description"
-          content="Deski is a decision making app."
+          content="Clique Decision is a decision making app."
         />
         <meta name="description" content="Decision making App" />
       </Helmet>
       {/* End Seo Helmt */}
-
       <ScrollToTop />
       {/* End Scroll top */}
 
