@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Helmet } from "react-helmet";
 import Features from "../../components/clique-decision-landing/Features";
 import HowWorks from "../../components/clique-decision-landing/HowWorks";
@@ -9,8 +9,16 @@ import HeroBannerThirteen from "../../components/clique-decision-landing/HeroBan
 import Blog from "../../components/clique-decision-landing/Blog";
 import CallToAction from "../../components/clique-decision-landing/CallToAction";
 import Footer from "../../components/clique-decision-landing/Footer";
+import Product from "../../components/product/Product";
+
 
 const FormSurveyLanding = () => {
+  useEffect(() => {
+    // Check if AOS is available (assuming it's included as a script)
+    if (typeof window !== 'undefined' && window.AOS) {
+      window.AOS.init();
+    }
+  }, []);
   return (
     <div className="main-page-wrapper p0 font-gordita">
       <Helmet>
@@ -63,12 +71,24 @@ const FormSurveyLanding = () => {
       <div
         className="block-style-thirtySix lg-container pt-225 md-pt-120"
         id="feature"
-      >
+      ><select name="" id=""></select>
         <div className="container">
           <Features />
         </div>
       </div>
      
+
+      <div
+        className=" lg-container pt-100 md-pt-110"
+        data-aos="fade-up"
+        id="product"
+      >
+        <div className="container" style={{margin:"0px"}} >
+            <Product />
+        </div>
+      </div>
+
+
       <div
         className=" lg-container pt-180 md-pt-110"
         data-aos="fade-up"
