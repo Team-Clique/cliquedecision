@@ -1,0 +1,103 @@
+/* Centering and mobile responsiveness */
+.product-body {
+  width: 100%;
+  height: auto; /* Change to auto for responsiveness */
+  padding: 0; /* Remove padding */
+  margin: 0 auto; /* Center horizontally */
+}
+
+.product-body1,
+.product-body2 {
+  width: 100%;
+  height: auto; /* Change to auto for responsiveness */
+  padding-top: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center items horizontally */
+  font-family: "gordita", "sans-serif"; /* Correct typo in font-family */
+}
+
+.product-body1 .product-top {
+  width: 100%;
+  background: linear-gradient(90deg, rgb(239, 175, 175), rgba(226, 216, 35, 0.2), white);
+  padding: 50px;
+  text-align: center; /* Center text horizontally */
+}
+
+.product-body1 .product-bottom {
+  padding: 50px;
+  width: 100%;
+  background-color: rgb(245, 245, 245);
+  text-align: center; /* Center text horizontally */
+}
+
+.product-body1 .product-bottom .contributor-div {
+  display: flex;
+  flex-wrap: wrap; /* Allow items to wrap */
+  justify-content: center; /* Center items horizontally */
+}
+
+.product-body1 .product-bottom .contributor-div div {
+  margin: 10px; /* Adjust margin for spacing */
+}
+
+.product-body2 {
+  padding-top: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center items horizontally */
+  font-family: "gordita", "sans-serif"; /* Correct typo in font-family */
+}
+
+.product-body2 .product-left,
+.product-body2 .product-right {
+  width: 100%;
+  padding: 0 20px; /* Add padding for spacing */
+}
+
+.product-body2 .product-left h3 {
+  margin: 30px auto; /* Center horizontally */
+}
+
+.product-body2 .product-left .option-container-nav,
+.product-body2 .product-left .option-container {
+  width: 100%;
+  padding: 20px 0;
+}
+
+.product-body2 .product-left .option-container .optionInputBox .option-div input {
+  width: 100%; /* Adjust input width */
+}
+
+/* Media queries for mobile responsiveness */
+@media only screen and (max-width: 768px) {
+  .product-body1,
+  .product-body2 {
+    font-size: 12px;
+  }
+}
+
+@media only screen and (max-width: 375px) {
+  .product-body1 .product-top {
+    font-size: 10px;
+    padding-bottom: 20px;
+    height: 50%;
+  }
+  .product-body1 .product-bottom {
+    padding: 20px;
+  }
+  .product-body1 .product-bottom .contributor-div {
+    margin: 0;
+    padding: 0;
+  }
+  .product-body1 .product-bottom .contributor-div div {
+    margin: 10px;
+  }
+  .product-body2 .option-container {
+    height: 50%;
+    overflow-y: auto;
+  }
+
+
+}
+
