@@ -40,7 +40,6 @@ const App = () => {
         <meta name="description" content="Decision making App" />
       </Helmet>
       {/* End Seo Helmt */}
-
       <ScrollToTop />
       {/* End Scroll top */}
 
