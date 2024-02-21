@@ -8,6 +8,9 @@ Setup Procedure
 
 ```
 npm install
+
+npm install --legacy-peer-deps
+
 ```
 
 ### Compiles and hot-reloads for development
