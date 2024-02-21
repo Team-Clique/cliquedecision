@@ -27,7 +27,7 @@ const App = () => {
         <meta property="og:type" content="website" />
         <meta
           property="og:title"
-          content="Clique Decisions: Decision Making App"
+          content="Clique Decision: Create Decisions & Get Quick Results"
         />
         <meta
           name="keywords"

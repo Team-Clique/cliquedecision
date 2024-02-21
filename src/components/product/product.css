@@ -60,14 +60,13 @@
   position: relative;
   top: 0;
   font-family: "gordita", "sans-selif";
-  justify-content: space-around;
 }
 .product-body2 .product-left {
   width: 50%;
   height: 100%;
   display: flex;
   flex-direction: column;
-  padding: 0px 0;
+  padding: 50px 0;
 }
 .product-body2 .product-left h3 {
   margin: 30px 50px;
@@ -198,8 +197,4 @@
     height: 50%;
     overflow-y: auto;
   }
-
-
-  
-
 }/*# sourceMappingURL=product.css.map */

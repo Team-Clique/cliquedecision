@@ -49,7 +49,7 @@ function SecondPage(props) {
       </div>
       
       
-
+      <div className="product-right"></div>
     </div>
   );
 }
