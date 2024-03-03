@@ -6,7 +6,7 @@ const NotFound = () => {
   return (
     <div className="main-page-wrapper p0">
       <Helmet>
-        <title>Not Found || Deski-Saas & Software React Template</title>
+        <title>Clique Decision-Decision Maker</title>
       </Helmet>
       {/* End Page SEO Content */}
 
@@ -35,8 +35,7 @@ const NotFound = () => {
             be Found.
           </h1>
           <p className="font-rubik">
-            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-            commodo consequat
+            Clique Decision
           </p>
 
           <Link

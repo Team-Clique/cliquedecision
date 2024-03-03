@@ -77,9 +77,11 @@ const ServiceDetails = () => {
                   <div className="col-md-6">
                     <h4 className="font-gordita pt-40">The Challange</h4>
                     <p>
-                      Deski Web offers a complete lineup of features from any
-                      major Maecena quis interdum, orci at euis dapibus, mass
-                      ante pharetra tellus massa ante pharetra tellus.
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                  Maecenas interdum, orci at dapibus, massa ante pharetra
+                  tellus. Maecenas interdum, orci at euismod dapibus. Lorem
+                  ipsum dolor sit amet, consectetur adipiscing elit. Maecenas
+                  interdum.
                     </p>
                   </div>
                 </div>

@@ -2,142 +2,96 @@ import React, { useState } from 'react';
 import FormGroup from '@mui/material/FormGroup';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import Checkbox from '@mui/material/Checkbox';
-import Modal from '@mui/material/Modal';
-import Typography from '@mui/material/Typography';
-import Box from '@mui/material/Box';
-import Button from '@mui/material/Button';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
-
-import { FaStar } from 'react-icons/fa';
-
+import ModalPage from './ModalPage';
+import axios from 'axios';
+import './style/myPreference.css';
 import styled from 'styled-components';
-const style = {
-  position: 'absolute',
-  top: '50%',
-  left: '50%',
-  transform: 'translate(-50%, -50%)',
-  width: '70%',
-  maxWidth: '500px',
-  height: '50%',
-  bgcolor: 'background.paper',
 
-  boxShadow: 24,
-  p: 4,
-};
+function MyPreference(props) {
+    const [open, setOpen] = useState(false);
+    const [allRestaurant, setAllRestaurant] = useState([]);
+    const [selectedCheckboxes, setSelectedCheckboxes] = useState([]);
 
+    const handleOpen = () => {
+        let categories = selectedCheckboxes.filter(category => category !== 'no').join(',');
+        if (categories === '') categories = 'restaurants'; // Default to 'restaurants' if no specific categories are selected
+        axios.get(`http://localhost:3002/searchRestaurant?categories=${categories}`)
+            .then((response) => {
+                console.log(response.data);
+                setAllRestaurant(response.data.businesses); // Update allRestaurant state with fetched data
+                setOpen(true);
+            })
+            .catch((err) => console.error(err));
+    };
 
-const Rating = styled.div`
-  cursor: pointer;
-`;
+    const handleClose = () => {
+        setSelectedCheckboxes([]);
+        setOpen(false);
+    };
 
-function MyPreference() {
-  const [open, setOpen] = useState(false);
-  const handleOpen = () => setOpen(true);
-  const handleClose = () => setOpen(false);
+    const goMainHandleClose = () => {
+        setOpen(false);
+        props.setStage(1);
+    };
 
-  return (
-    <div className="option-container">
-      <h5>Know my preferences</h5>
-      <p>Food preferences</p>
-      <div className="checkbox-div" style={{ overflow: 'wrap' }}>
-        <div className="checkbox-word">
-          <p style={{ overflow: 'wrap' ,width:"300px"}}>
-            Select food type, and we will decide for you!{' '}
-            <i>Currently only serving the Bellevue, WA area</i>{' '}
-          </p>
+    const handleChange = (event) => {
+        const checkboxValue = event.target.value;
+        const isChecked = event.target.checked;
+
+        if (isChecked) {
+            setSelectedCheckboxes([...selectedCheckboxes, checkboxValue]);
+        } else {
+            setSelectedCheckboxes(selectedCheckboxes.filter((value) => value !== checkboxValue));
+        }
+    };
+
+    return (
+        <div className="pref-container">
+            <h5>Know my preferences</h5>
+            <p>Food preferences</p>
+            <div className="checkbox-div" style={{ overflow: 'wrap' }}>
+                <div className="checkbox-word">
+                    <p style={{ overflow: 'wrap', width: "300px" }}>
+                        Select food type, and we will decide for you!{' '}
+                        <i>Currently only serving the Bellevue, WA area</i>{' '}
+                    </p>
+                </div>
+                <FormGroup className="checkbox-group">
+                    <FormControlLabel className="checkbox-label" control={<Checkbox value='mexican' onChange={handleChange} checked={selectedCheckboxes.includes("mexican")} />} label="Mexican" />
+                    <FormControlLabel className="checkbox-label" control={<Checkbox value='chinese' onChange={handleChange} checked={selectedCheckboxes.includes("chinese")} />} label="Chinese" />
+                    <FormControlLabel className="checkbox-label" control={<Checkbox value='japanese' onChange={handleChange} checked={selectedCheckboxes.includes("japanese")} />} label="Japanese" />
+                    <FormControlLabel className="checkbox-label" control={<Checkbox value='desserts' onChange={handleChange} checked={selectedCheckboxes.includes("desserts")} />} label="Desserts" />
+                    <FormControlLabel className="checkbox-label" control={<Checkbox value='italian' onChange={handleChange} checked={selectedCheckboxes.includes("italian")} />} label="Italian" />
+                    <FormControlLabel className="checkbox-label" control={<Checkbox value='taiwanese' onChange={handleChange} checked={selectedCheckboxes.includes("taiwanese")} />} label="Taiwanese" />
+                    <FormControlLabel className="checkbox-label" control={<Checkbox value='burgers' onChange={handleChange} checked={selectedCheckboxes.includes("burgers")} />} label="Burgers" />
+                    <FormControlLabel className="checkbox-label" control={<Checkbox value='seafood' onChange={handleChange} checked={selectedCheckboxes.includes("seafood")} />} label="Seafood" />
+                    <FormControlLabel className="checkbox-label" control={<Checkbox value='shanghainese' onChange={handleChange} checked={selectedCheckboxes.includes("shanghainese")} />} label="Shanghainese" />
+                    <FormControlLabel className="checkbox-label" control={<Checkbox value='thai' onChange={handleChange} checked={selectedCheckboxes.includes("thai")} />} label="Thai" />
+                    <FormControlLabel className="checkbox-label" control={<Checkbox value='ramen' onChange={handleChange} checked={selectedCheckboxes.includes("ramen")} />} label="Ramen" />
+                    <FormControlLabel className="checkbox-label" control={<Checkbox value='newamerican' onChange={handleChange} checked={selectedCheckboxes.includes("newamerican")} />} label="New American" />
+                    <FormControlLabel className="checkbox-label" control={<Checkbox value='hotpot' onChange={handleChange} checked={selectedCheckboxes.includes("hotpot")} />} label="Hot pot" />
+                    <FormControlLabel className="checkbox-label" control={<Checkbox value='no' onChange={handleChange} checked={selectedCheckboxes.includes("no")} />} label="No preference" />
+
+                </FormGroup>
+                <ModalPage
+                    modalType={'preference'}
+                    preference={selectedCheckboxes} // Pass selectedCheckboxes as preference
+                    open={open}
+                    handleClose={handleClose}
+                    goMainHandleClose={goMainHandleClose}
+                    allRestaurant={allRestaurant}
+                />
+
+                {selectedCheckboxes.length > 0 &&
+                    <button className="decideBtn" onClick={handleOpen}>
+                        Decide for me <FontAwesomeIcon icon={faArrowRight} />
+                    </button>
+                }
+            </div>
         </div>
-        <FormGroup className="checkbox-group">
-          <FormControlLabel control={<Checkbox />} label="Fast Food" />
-          <FormControlLabel control={<Checkbox />} label="Mexican" />
-          <FormControlLabel control={<Checkbox />} label="Chinese" />
-          <FormControlLabel control={<Checkbox />} label="Japanese" />
-          <FormControlLabel control={<Checkbox />} label="Dessert" />
-          <FormControlLabel control={<Checkbox />} label="Italian" />
-          <FormControlLabel
-            control={<Checkbox />}
-            label="Genuinely no preferences"
-          />
-        </FormGroup>
-        <button className="decideBtn" onClick={handleOpen}>
-          Decide for me
-          <FontAwesomeIcon icon={faArrowRight} />
-        </button>
-        <Modal
-          open={open}
-          onClose={handleClose}
-          aria-labelledby="modal-modal-title"
-          aria-describedby="modal-modal-description"
-        >
-          <Box sx={style}>
-            <Typography
-              id="modal-modal-title"
-              variant="h6"
-              component="h2"
-              style={{ fontSize: '28px' }}
-            >
-              We Decided.....
-            </Typography>
-            <Typography id="modal-modal-description" sx={{ mt: 2 }}>
-              <p style={{ fontSize: '10px' }}>
-                Currently only serving the Bellevue, WA area
-              </p>
-              <div style={{ display: 'flex' }}>
-                <div
-                  className="restaurantInfo"
-                  style={{ height: '200px', width: '50%' }}
-                >
-                  <h5 style={{ color: 'darkred' }}>Restaurant Name</h5>
-                  <div className="infobox">
-                    <p style={{ fontSize: '10px' }}>rating</p>
-
-                    <Rating>
-                      <FaStar color={'red'} fontSize={'12px'} />
-                      <FaStar color={'red'} fontSize={'12px'} />
-                      <FaStar color={'red'} fontSize={'12px'} />
-                      <FaStar color={'red'} fontSize={'12px'} />
-                      <FaStar color={"rgb(192,192,192)"} fontSize={'12px'} />
-                    </Rating>
-                  </div>
-                  <div className="infobox">
-                    <p style={{ fontSize: '10px' }}>address</p>
-                    <p style={{ fontSize: '12px' ,color:'black' }}> 1328 156th Ave NE, Bellevue, WA 98007</p>
-                  </div>
-                  <div className="infobox">
-                    <p style={{ fontSize: '10px' }}>hours</p>
-                    <p style={{ fontSize: '12px', color:'black' }}>10:45 AM ~ 5:30 PM</p>
-                  </div>
-                </div>
-                <div className="restaurantImg">
-                  <img
-                    src="https://lh3.googleusercontent.com/p/AF1QipOTrDmB6NRix0eEefCHKduCF2b24GY4q1MyNTVN=s680-w680-h510"
-                    style={{
-                      width: '200px',
-                      height: '150px',
-                      backgroundColor: 'grey',
-                    }}
-                    alt="img"
-                  />
-                </div>
-              </div>
-              <div style={{ display: 'flex', justifyContent: 'end' }}>
-                <Button
-                  className="decideBtn"
-                  style={{ color: 'darkred' }}
-                  onClick={handleClose}
-                >
-                  Try again
-                </Button>
-                <Button onClick={handleClose} style={{ color: 'white',backgroundColor:'darkred' }}>
-                  Awesome!
-                </Button>
-              </div>
-            </Typography>
-          </Box>
-        </Modal>
-      </div>
-    </div>
-  );
+    );
 }
 
 export default MyPreference;

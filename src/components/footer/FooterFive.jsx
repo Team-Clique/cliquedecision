@@ -45,7 +45,7 @@ const FooterFive = () => {
         <div className="title">We’r always happy to help.</div>
         <div className="text-center">
           <a href="mailto:ib-themes21@gmail.com" className="email">
-            ask@jdeski.com
+            ask@cliquedecisions.com
           </a>
         </div>
       </div>

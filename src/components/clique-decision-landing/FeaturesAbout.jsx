@@ -12,7 +12,7 @@ const FeaturesAbout = () => {
           <h2>First-class & smooth user experience.</h2>
         </div>
         <div className="tag-line pb-10">
-          Deski responds to previous answers to show only the most relevant
+          responds to previous answers to show only the most relevant
           questions. A better experience for respondents better data for you.
         </div>
         <a href="#" className="theme-btn-fourteen">

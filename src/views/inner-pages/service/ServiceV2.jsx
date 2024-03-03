@@ -13,7 +13,7 @@ const ServiceV2 = () => {
   return (
     <div className="main-page-wrapper">
       <Helmet>
-        <title>Service Version 2 || Deski-Saas & Software React Template</title>
+        <title>Service Version 2 ||Clique Decisions</title>
       </Helmet>
       {/* End Page SEO Content */}
 

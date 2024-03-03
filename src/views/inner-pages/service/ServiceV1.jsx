@@ -36,8 +36,9 @@ const ServiceV1 = () => {
               <div className="col-xl-9 col-lg-10 m-auto">
                 <h1 className="heading">Our Services</h1>
                 <p className="sub-heading">
-                  deski helps teams of all sizes get better at delivering
-                  effortless customer
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                  Maecenas interdum, orci at dapibus, massa ante pharetra
+                  tellus.
                 </p>
               </div>
             </div>
@@ -87,7 +88,7 @@ const ServiceV1 = () => {
                 </span>
               </h2>
               <div className="sub-text mt-15">
-                Get to know all deski features, that are part of the complex
+                Get to know all clique Decisions features, that are part of the complex
                 multi-channel
               </div>
             </div>
@@ -117,7 +118,7 @@ const ServiceV1 = () => {
                       Why your should
                       <img src="images/shape/line-shape-6.svg" alt="" />
                     </span>
-                    choose deski.
+                    choose us?
                   </h2>
                 </div>
                 <p className="sub-text pb-35">

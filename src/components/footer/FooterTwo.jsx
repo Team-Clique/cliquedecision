@@ -56,7 +56,7 @@ const FooterTwo = () => {
             <Link to="/blog-details">Collaboration</Link>
           </li>
           <li>
-            <Link to="/blog-details">deski Reviews</Link>
+            <Link to="/blog-details">Clique Reviews</Link>
           </li>
         </ul>
       </div>
@@ -122,7 +122,7 @@ const FooterTwo = () => {
         <h5 className="footer-title">Address</h5>
         <ul className="info">
           <li>
-            <a href="mailto:ib-themes21@gmail.com">deskisupportinc@gmail.com</a>
+            <a href="mailto:ib-themes21@gmail.com">cliquedecisionsupportinc@gmail.com</a>
           </li>
           <li>
             <a href="Tel: 7614123224" className="mobile-num">

@@ -98,7 +98,7 @@ const FooterThree = () => {
         </p>
         <ul className="info">
           <li>
-            <a href="mailto:ib-themes21@gmail.com">deskisupportinc@gmail.com</a>
+            <a href="mailto:ib-themes21@gmail.com">cliquedecisionsupportinc@gmail.com</a>
           </li>
           <li>
             <a href="Tel: 7614123224" className="mobile-num">

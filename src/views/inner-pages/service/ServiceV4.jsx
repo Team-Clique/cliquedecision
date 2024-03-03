@@ -68,8 +68,7 @@ const ServiceV4 = () => {
                 <div className="quote-wrapper pt-60">
                   <img src="images/icon/185.png" alt="icon" className="icon" />
                   <blockquote className="font-rubik">
-                    Deski combines excellent live chat, ticketing and automation
-                    that allow us to provide quality.
+                  Clique Decisions is a creative company that focuses on establishing long-term relationships with customers.
                   </blockquote>
                   <h6 className="mt-20">
                     Clique Decisions
@@ -103,8 +102,7 @@ const ServiceV4 = () => {
           <div className="title-style-eleven text-center pb-50 md-pb-30">
             <h2>Explore Service.</h2>
             <p className="pt-20">
-              Get to know all deski features, that are part of the complex
-              multi-channel
+              Get to know Clique Decisions
             </p>
           </div>
           <Service />

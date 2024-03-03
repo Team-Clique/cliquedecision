@@ -11,8 +11,8 @@ function Product() {
  return (
     <div className='product-body'>
       { stage === 1 && <FirstPage  setStage={setStage}/> }
-      { stage === 2 && <SecondPage/> }
-      { stage === 3 && <FirstPage/> }
+      { stage === 2 && <SecondPage setStage={setStage}/> }
+  
     </div>
   )
 }

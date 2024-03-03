@@ -7,7 +7,7 @@ const SignUp = () => {
   return (
     <div className="main-page-wrapper p0">
       <Helmet>
-        <title>Sign Up || Deski-Saas & Software React Template</title>
+        <title>Sign Up || Clique Decision || Decision Maker</title>
       </Helmet>
       {/* End Page SEO Content */}
       <div className="user-data-page clearfix d-lg-flex">
