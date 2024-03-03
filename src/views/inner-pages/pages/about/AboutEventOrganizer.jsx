@@ -15,7 +15,7 @@ const EventOrganizer = () => {
     <div className="main-page-wrapper p0">
       <Helmet>
         <title>
-          About Event Organizer || Deski-Saas & Software React Template
+          About Event Organizer || Clique Decision
         </title>
       </Helmet>
       {/* End Page SEO Content */}
@@ -101,7 +101,7 @@ const EventOrganizer = () => {
         <div className="container">
           <div className="title-style-five text-center mb-90 md-mb-60">
             <h6>Our Team</h6>
-            <h2>The team behind deski </h2>
+            <h2>The team</h2>
           </div>
 
           <div className="team-wrapper">

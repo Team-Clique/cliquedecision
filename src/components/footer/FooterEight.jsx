@@ -86,7 +86,7 @@ const FooterEight = () => {
             <Link to="/doc-box-with-banner">Info Box</Link>
           </li>
           <li>
-            <Link to="/blog-details">deski Reviews</Link>
+            <Link to="/blog-details">Clique Reviews</Link>
           </li>
         </ul>
       </div>

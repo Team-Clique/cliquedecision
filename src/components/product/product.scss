@@ -12,13 +12,17 @@
   flex-direction: column;
   font-family: 'gordita', 'sans-selif';
 
+  .wt {
+    color: white;
+    margin: 10px 0;
+  }
+  
   .product-top {
     width: 100%;
     background: linear-gradient(
-      90deg,
-      rgba(239, 175, 175, 1),
-      rgba(226, 216, 35, 0.2),
-      white
+      45deg,
+      rgba(100, 74, 246),
+      rgba(255, 219, 250)
     );
     padding: 50px;
 
@@ -27,20 +31,21 @@
       margin: 10px;
       border-radius: 8px;
       cursor: pointer;
-      background-color: rgb(237, 66, 66);
-      color: white;
+      background-color: rgba(255, 203, 140);
+
+      border: none;
     }
 
     .dfmBtn:hover {
-      background-color: rgb(235, 37, 37);
+      background-color: rgb(238, 176, 99);
     }
   }
 
   .product-bottom {
     padding: 50px;
-    height: 60%;
+    height: 70%;
     width: 100%;
-    background-color: rgb(245, 245, 245);
+    background-color: rgba(255, 219, 250, 0.1);
 
     .contributor-div {
       display: flex;
@@ -67,12 +72,13 @@
 .product-body2 {
   width: 100%;
   height: 100%;
-  padding-top: 30px;
+  // padding-top: 30px;
   display: flex;
+  justify-content: center;
   position: relative;
   top: 0;
   font-family: 'gordita', 'sans-selif';
-
+  background-color: rgba(255, 219, 250, 0.2);
   .product-left {
     width: 50%;
     height: 100%;
@@ -81,127 +87,47 @@
     padding: 50px 0;
 
     h3 {
-      margin: 30px 50px;
+      // margin: 30px 50px;
+      text-align: center;
     }
 
     .option-container-nav {
-      margin: 20px;
-      width: auto;
+      margin: 20px 10%;
+      width: 100%;
+
+      // display: flex;
 
       .nav-item {
         margin: auto;
         width: 40%;
         font-size: 12px;
       }
+      .nav-content {
+        // margin: 5% 20%;
+        display: flex;
+        justify-content: center;
+        width: 80%;
+        margin: 10px;
+        background-color: rgba(255, 219, 250, 0.5);
+      }
     }
 
-    .option-container {
-      margin: 10px;
-      padding: 20px 0;
-
-
-
-
-      h5,
-      p {
-        // margin: 0;
-        padding: 2px 10px;
-        color: black;
-      }
-      p {
-        font-size: 12px;
-      }
-
-      .optionInputBox {
-        overflow-y: auto;
-        margin: 10px 10px;
-
-        .option-div {
-          display: flex;
-          flex-direction: column;
-
-          label {
-            font-size: 12px;
-          }
-
-          input {
-            width: 50%;
-          }
-        }
-
-        .optionBtn {
-          width: 50%;
-          margin-top: 10px;
-          font-size: 10px;
-        }
-
-        .add {
-          border: 2px dotted rgb(237, 66, 66);
-          color: rgb(237, 66, 66);
-          border-radius: 10px;
-        }
-
-        .decide{
-          background-color: rgba(239, 175, 175, 1);
-          border-radius: 10px;
-          color: red;
-          
-        
-        }
-      }
-
-
-    .checkbox-div{
-        min-width: 500px;
-            .checkbox-word{
-                
-                i{
-                        background-color: rgb(45, 43, 43);
-                        color: white;
-                        font-size: 10px;
-                        padding: 0 5px;
-                        text-align: center;
-                        width: fit-content;
-                
-                
-                }
-            }
-            
-        
-        .checkbox-group{
-            margin-left: 20px;
-        }
-        .decideBtn{
-            margin-left: 20px;
-            background-color: rgba(239, 175, 175, 1);
-            border-radius: 10px;
-            color: white;
-            font-size: 10px;
-            width: 40%;
-            
-        }
-        
-    }
-
-
-
-
-    }
-
-
+   
   }
 
   .product-right {
     width: 50%;
-    background: linear-gradient(
-      90deg,
-      rgba(239, 175, 175, 1),
-      rgba(226, 216, 35, 0.2)
-    );
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: rgba(100, 74, 246,0.8) ;
+    // background: linear-gradient(
+    //   45deg,
+    //   rgba(100, 74, 246),
+    //   rgba(255, 219, 250)
+    // );
   }
 }
-
-
 
 @media only screen and (max-width: 768px) {
   .product-body1 {
@@ -238,12 +164,11 @@
           color: red;
         }
       }
-
-   
     }
-    
 
-   
+    .nav-content {
+      height: 85%;
+    }
   }
 }
 
@@ -268,13 +193,19 @@
       }
     }
   }
-  .product-body2{
-    .option-container{
-        
-            height: 50%;
-            overflow-y: auto;
-        
+  .product-body2 {
+
+    .option-container {
+      height: 50%;
+      overflow-y: auto;
+    }
+    .nav-content {
+      height: 60%;
     }
   }
- 
+}
+
+.pref-container .checkbox-div .checkbox-label {
+  font-size: 14px;
+  color: white;
 }

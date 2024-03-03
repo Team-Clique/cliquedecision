@@ -8,22 +8,22 @@ const PortfolioContent = [
   {
     img: "img_24",
     meta: "User Interface",
-    title: "Deski - Art & Illustration",
+    title: "Clique Decisions Decision Maker",
   },
   {
     img: "img_27",
     meta: "Web developemnt",
-    title: "Deski - Art & Illustration",
+    title: "Clique Decisions Decision Maker",
   },
   {
     img: "img_26",
     meta: "Social Marketing",
-    title: "Deski - Art & Illustration",
+    title: "Clique Decisions Decision Maker",
   },
   {
     img: "img_25",
     meta: "lead generation",
-    title: "Deski - Art & Illustration",
+    title: "Clique Decisions Decision Maker",
   },
 ];
 

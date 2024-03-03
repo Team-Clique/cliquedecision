@@ -1,0 +1,71 @@
+.pref-container {
+  margin-left:30%;
+  padding: 30px 0;
+  height: 50%;
+}
+.pref-container h5,
+.pref-container p {
+  padding: 2px 10px;
+  color: black;
+}
+.pref-container p {
+  font-size: 12px;
+}
+.pref-container .checkbox-div {
+  min-width: 500px;
+}
+.pref-container .checkbox-div .checkbox-word i {
+  background-color: rgb(45, 43, 43);
+  color: white;
+  font-size: 10px;
+  padding: 0 5px;
+  text-align: center;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+.pref-container .checkbox-div .checkbox-group {
+  display: flex;
+  flex-direction: column;
+}
+.pref-container .checkbox-div .checkbox-label {
+  font-size: 14px; /* Adjust font size for smaller screens */
+}
+.pref-container .checkbox-div .decideBtn {
+  margin-left: 20px;
+  background-color: rgb(239, 175, 175);
+  border-radius: 10px;
+  color: white;
+  font-size: 10px;
+  width: 40%;
+}
+
+@media only screen and (max-width: 768px) {
+  .pref-container {
+    margin-left: 50%;
+  }
+  .pref-container p {
+    font-size: 12px;
+  }
+  .pref-container h5 {
+    font-size: 15px;
+  }
+  .pref-container .checkbox-group {
+    margin-left: 30px;
+  }
+  .pref-container .checkbox-group .checkbox-label {
+    float: left;
+    width: 30%;
+  }
+}
+@media only screen and (max-width: 375px) {
+  .pref-container {
+    margin-left: 60%;
+  }
+
+  
+}/*# sourceMappingURL=myPreference.css.map */
+
+.pref-container .checkbox-div .checkbox-label {
+  font-size: 14px;
+  color: white;
+}

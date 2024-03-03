@@ -3,42 +3,37 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {faArrowRight} from '@fortawesome/free-solid-svg-icons';
 
 function FirstPage(props) {
-  return (
+  const people = [
+    {
+     name: 'John',
+      profile:'https://as2.ftcdn.net/v2/jpg/03/64/21/11/1000_F_364211147_1qgLVxv1Tcq0Ohz3FawUfrtONzz8nq3e.jpg'
+    },
+    {
+     name: 'Jane',
+      profile:'https://as2.ftcdn.net/v2/jpg/03/64/21/11/1000_F_364211147_1qgLVxv1Tcq0Ohz3FawUfrtONzz8nq3e.jpg'
+    },
+    {
+     name: 'Jim',
+    profile:'https://as2.ftcdn.net/v2/jpg/03/64/21/11/1000_F_364211147_1qgLVxv1Tcq0Ohz3FawUfrtONzz8nq3e.jpg'
+    },
+    {
+      name: 'Austin',
+     profile:'https://as2.ftcdn.net/v2/jpg/03/64/21/11/1000_F_364211147_1qgLVxv1Tcq0Ohz3FawUfrtONzz8nq3e.jpg'
+     }
+
+   ];
+   return (
     <div className='product-body1'>
-        <div className='product-top'>
-        <h3>Decide for me</h3>
-        <p>An option randomizer to help you pick a food place</p>
-        <button className='dfmBtn' onClick={()=>props.setStage(curr=>curr+1)}>Decide for me <FontAwesomeIcon icon={faArrowRight}  /> </button>
-      </div>
-      <div className='product-bottom'>
-        <h5>About "Decide for me"</h5>
-        <p>We are group of indecisive food lovers!</p>
-        <div className='contributor-div'>
-          <div>
-            <img src="https://as2.ftcdn.net/v2/jpg/03/64/21/11/1000_F_364211147_1qgLVxv1Tcq0Ohz3FawUfrtONzz8nq3e.jpg" alt="pfp" style={{width:"100px", height:"100px"}}/>
-            <p>name1</p>
-          </div>
-          
-          <div>
-            <img src="https://as2.ftcdn.net/v2/jpg/03/64/21/11/1000_F_364211147_1qgLVxv1Tcq0Ohz3FawUfrtONzz8nq3e.jpg" alt="pfp" style={{width:"100px", height:"100px"}}/>
-            <p>name1</p>
-          </div>
-          
-          <div>
-            <img src="https://as2.ftcdn.net/v2/jpg/03/64/21/11/1000_F_364211147_1qgLVxv1Tcq0Ohz3FawUfrtONzz8nq3e.jpg" alt="pfp" style={{width:"100px", height:"100px"}}/>
-            <p>name1</p>
-          </div>
-          
-          <div>
-            <img src="https://as2.ftcdn.net/v2/jpg/03/64/21/11/1000_F_364211147_1qgLVxv1Tcq0Ohz3FawUfrtONzz8nq3e.jpg" alt="pfp" style={{width:"100px", height:"100px"}}/>
-            <p>name1</p>
-          </div>
-          
-    
-        </div>
+      <div className='product-top'>
+        <h3 className='wt'>Decide for me</h3>
+        <p className='wt'>An option randomizer to help you pick between some options</p>
+        <button className='dfmBtn wt' onClick={() => props.setStage(2)}>Decide for me <FontAwesomeIcon icon={faArrowRight} /> </button>
       </div>
     </div>
-  )
+  );
+  
+  
+  
 }
 
 export default FirstPage

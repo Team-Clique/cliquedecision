@@ -10,7 +10,7 @@ const ContactEventOrganizer = () => {
     <div className="main-page-wrapper p0">
       <Helmet>
         <title>
-          Contact Event Organizer || Deski-Saas & Software React Template
+          Contact Event Organizer || Clique Decision
         </title>
       </Helmet>
       {/* End Page SEO Content */}

@@ -1,5 +1,4 @@
 import React, {  useState } from 'react';
-import DecideBtw from './DecideBtw';
 import MyPreference from './MyPreference';
 
 function SecondPage(props) {
@@ -12,20 +11,7 @@ function SecondPage(props) {
         <h3>So, What are we eating today?</h3>
         <div className="option-container-nav">
           <ul className="nav nav-underline">
-            <li className="nav-item">
-              <button
-                onClick={() => setOpt(0)}
-                className={`nav-link ${opt === 0 ? 'active' : ''}`}
-                style={{
-                  color: opt === 0 ? 'darkred' : 'lightcoral', // Apply different text colors
-                  margin:"0"
-                }}
-                data-bs-toggle="tab"
-                aria-current="page"
-              >
-                Decide Between some options
-              </button>
-            </li>
+            
             <li className="nav-item">
               <button
                 onClick={() => setOpt(1)}
@@ -39,14 +25,13 @@ function SecondPage(props) {
               </button>
             </li>
           </ul>
-          {opt === 0 ? (
-               <DecideBtw/>
-          ) : (
-            
-            <MyPreference/>
-          )}
+          <div className='nav-content'>
+              <MyPreference setStage={props.setStage}/>
+              
+          </div>
         </div>
       </div>
+      <div className='product-right'></div>
       
       
     </div>
