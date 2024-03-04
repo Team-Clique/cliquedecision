@@ -4,7 +4,6 @@ import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import { FaStar } from 'react-icons/fa';
-import styled from 'styled-components';
 
 const style = {
   position: 'absolute',
@@ -19,10 +18,6 @@ const style = {
   p: 4,
 };
 
-const Rating = styled.div`
-  cursor: pointer;
-`;
-
 const decideRandom = (arr) => {
   if (!arr || arr.length === 0) return null; // Handle case when arr is undefined or empty
   const randomIndex = Math.floor(Math.random() * arr.length);
@@ -35,6 +30,8 @@ function ModalPage({ handleClose, open, preference, goMainHandleClose, allRestau
 
   const selectedRestaurant = decideRandom(filteredRestaurants);
 
+
+  
   return (
     <div>
       <Modal
@@ -57,13 +54,26 @@ function ModalPage({ handleClose, open, preference, goMainHandleClose, allRestau
                   >
                     <h5 style={{ color: "darkred" }}>{selectedRestaurant.name}</h5>
                     <div className="infobox">
-                      <p style={{ fontSize: "10px" }}>Rating: {selectedRestaurant.rating}</p>
+                      <p className='sm' >Rating</p>
 
-                      <Rating>
-                        {[...Array(5)].map((_, i) => (
-                          <FaStar key={i} color={i < selectedRestaurant.rating ? "red" : "rgb(192,192,192)"} fontSize={"12px"} />
-                        ))}
-                      </Rating>
+                 
+                    <div >
+                      <p style={{fontSize:"12px"}}> {selectedRestaurant.rating}</p>
+                      {[...Array(5)].map((_, i) => {
+                        if (i < Math.floor(selectedRestaurant.rating)) {
+                          return <FaStar key={i} color="red" fontSize={"12px"} />;
+                        } else if (i === Math.floor(selectedRestaurant.rating) && selectedRestaurant.rating % 1 !== 0) {
+                          const fractionalPart = selectedRestaurant.rating % 1;
+                          const color = `rgba(250,0,0,${fractionalPart})`;
+                          return (
+                              <FaStar color={color} fontSize={"12px"}  />
+                          );
+                        } else {
+                          return <FaStar key={i} color="rgb(192,192,192)" fontSize={"12px"} />;
+                        }
+                      })}
+                    </div>
+
                     </div>
                     <div className="infobox">
                       <p style={{ fontSize: "10px" }}>Address:</p>
