@@ -121,3 +121,4 @@ function ModalPage({ handleClose, open, preference, goMainHandleClose, allRestau
 }
 
 export default ModalPage;
+
