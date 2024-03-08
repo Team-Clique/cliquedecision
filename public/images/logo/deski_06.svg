@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<svg width="138px" height="47px" viewBox="0 0 138 47" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg">
-  <g id="Logo" transform="translate(0.5 0.5)">
+<svg id="svg" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+ <g id="Logo" transform="translate(0.5 0.5)">
     <g id="Circle" transform="translate(0 10)">
       <path d="M15 30C23.2843 30 30 23.2843 30 15C30 6.71573 23.2843 0 15 0C6.71573 0 0 6.71573 0 15C0 23.2843 6.71573 30 15 30Z" id="Oval" fill="#000000" fill-rule="evenodd" stroke="none" />
       <g id="D" fill="#FFFFFF" transform="translate(9.375 1.9443359)">

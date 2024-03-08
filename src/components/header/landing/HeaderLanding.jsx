@@ -91,16 +91,16 @@ const HeaderLanding = () => {
                      
                     </li>
 
-                    <li className="nav-item">
+                    {/* <li className="nav-item">
                       <a href="#features" className="nav-link">
                         Features
                       </a>
-                    </li>
-                    <li className="nav-item">
+                    </li> */}
+                    {/* <li className="nav-item">
                       <a href="#about" className="nav-link">
                         About
                       </a>
-                    </li>
+                    </li> */}
                     <li className="nav-item">
                       <a href="#product" className="nav-link">
                         App

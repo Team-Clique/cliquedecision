@@ -1,10 +1,10 @@
-import React, { useState } from "react";
-import Scrollspy from "react-scrollspy";
-import { Link } from "react-router-dom";
-import Modal from "react-modal";
-import HeaderPopupForm from "../form/HeaderPopupForm";
+import React, { useState } from 'react';
+import Scrollspy from 'react-scrollspy';
+import { Link } from 'react-router-dom';
+import Modal from 'react-modal';
+import HeaderPopupForm from '../form/HeaderPopupForm';
 
-Modal.setAppElement("#root");
+Modal.setAppElement('#root');
 
 const HeaderLandingFormSurvey = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -24,7 +24,7 @@ const HeaderLandingFormSurvey = () => {
     }
   };
 
-  window.addEventListener("scroll", changeBackground);
+  window.addEventListener('scroll', changeBackground);
 
   return (
     <>
@@ -34,19 +34,27 @@ const HeaderLandingFormSurvey = () => {
       <div
         className={
           navbar
-            ? "theme-main-menu sticky-menu  theme-menu-six bg-none fixed"
-            : "theme-main-menu sticky-menu  theme-menu-six bg-none"
+            ? 'theme-main-menu sticky-menu  theme-menu-six bg-none fixed'
+            : 'theme-main-menu sticky-menu  theme-menu-six bg-none'
         }
       >
         <div className="d-flex align-items-center">
           <div className="logo order-lg-1">
+            {/* <a href="#home"> */}
             <Link to="/">
-              <img src="images/logo/deski_06.svg" alt="brand" />
+              <img
+                src="/images/logo/cliqueLogo.png"
+                width={'150px'}
+                style={{ cursor: 'pointer' }}
+                alt="brand"
+              />
             </Link>
+            {/* </a> */}
           </div>
           {/* End logo */}
 
-          <div className="right-widget ms-xl-5 order-lg-3">
+          {/* delete  login,sign up btn  - Jiwon  */}
+          {/* <div className="right-widget ms-xl-5 order-lg-3">
             <ul className="d-flex align-items-center">
               <li>
                 <Link
@@ -66,24 +74,28 @@ const HeaderLandingFormSurvey = () => {
                 </button>
               </li>
             </ul>
-          </div>
+          </div> */}
 
           <nav
             id="mega-menu-holder"
             className="navbar navbar-expand-lg ms-lg-auto order-lg-2"
           >
             <div className="container nav-container">
-              <div className="mob-header">
-                <button className="toggler-menu" onClick={handleClick}>
-                  <div className={click ? "active" : ""}>
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                  </div>
-                </button>
-              </div>
+                <div className="mob-header">
+                  {/* <button
+                    className="toggler-menu"
+                    onClick={handleClick}
+                    style={{ position: 'absolute', right: '20px', top: '85px' }}
+                  >
+                    <div className={click ? 'active' : ''}>
+                      <span></span>
+                      <span></span>
+                      <span></span>
+                    </div>
+                  </button> */}
+                </div>
               {/* End Header */}
-
+{/* 
               <div
                 className="navbar-collapse collapse landing-menu-onepage"
                 id="navbarSupportedContent"
@@ -92,18 +104,19 @@ const HeaderLandingFormSurvey = () => {
                   <Scrollspy
                     className="navbar-nav  main-side-nav font-gordita"
                     items={[
-                      "home",
-                      "feature",
-                      "product",
-                      "feedback",
-                      "pricing",
+                      'home',
+                      'feature',
+                      'product',
+                      'feedback',
+                      'pricing',
                     ]}
                     currentClassName="active"
                     offset={-500}
                   >
                     <li className="nav-item dropdown position-static">
-                      <a className="nav-link" href="#home">Home</a>
-                      
+                      <a className="nav-link" href="#home">
+                        Home
+                      </a>
                     </li>
                     <li className="nav-item">
                       <a href="#feature" className="nav-link">
@@ -112,7 +125,7 @@ const HeaderLandingFormSurvey = () => {
                     </li>
                     <li className="nav-item">
                       <a href="#product" className="nav-link">
-                        App
+                        Decide for me<menu type="context"></menu>
                       </a>
                     </li>
                     <li className="nav-item">
@@ -127,15 +140,16 @@ const HeaderLandingFormSurvey = () => {
                     </li>
                   </Scrollspy>
                 </div>
-              </div>
+              </div> */}
             </div>
           </nav>
+
         </div>
       </div>
       {/* /.theme-main-menu */}
 
       {/* Mobile Menu Start */}
-      <div className={click ? "mobile-menu  menu-open" : "mobile-menu"}>
+      {/* <div className={click ? 'mobile-menu  menu-open' : 'mobile-menu'}>
         <div className="logo order-md-1">
           <Link to="/event-organizer">
             <img src="images/logo/deski_06.svg" alt="brand" />
@@ -143,13 +157,13 @@ const HeaderLandingFormSurvey = () => {
           <div className="fix-icon text-dark" onClick={handleClick}>
             <img src="images/icon/close.svg" alt="icon" />
           </div>
-          {/* Mobile Menu close icon */}
+          Mobile Menu close icon
         </div>
 
         <Scrollspy
           className="navbar-nav"
           id="theme-menu-list"
-          items={["home", "feature", "product", "product", "about", "contact"]}
+          items={['home', 'product']}
           currentClassName="active"
           offset={-200}
         >
@@ -178,9 +192,8 @@ const HeaderLandingFormSurvey = () => {
               Contact
             </a>
           </li>
-          
         </Scrollspy>
-      </div>
+      </div> */}
       {/* Mobile Menu End */}
 
       <Modal
@@ -200,9 +213,7 @@ const HeaderLandingFormSurvey = () => {
 
             <div className="left-side">
               <div className="d-flex flex-column justify-content-between h-100">
-                <div className="row">
-                  
-                </div>
+                <div className="row"></div>
                 <img
                   src="images/assets/ils_18.svg"
                   alt=""

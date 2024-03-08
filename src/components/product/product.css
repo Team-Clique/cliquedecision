@@ -3,18 +3,6 @@
   height: 100vh;
 }
 
-.product-top {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  background: linear-gradient(45deg, rgb(100, 74, 246), rgb(255, 219, 250));
-  padding: 50px;
-  width: 100%;
-  padding: 95px;
-  flex-direction: column;
-}
-
 .product-body1 {
   width: 100%;
   height: 100%;
@@ -29,9 +17,18 @@
   margin: 10px 0;
 }
 .product-body1 .product-top {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 100%;
   background: linear-gradient(45deg, rgb(100, 74, 246), rgb(255, 219, 250));
   padding: 100px;
+  /* width: 100%; */
+  /* background: linear-gradient(45deg, rgb(100, 74, 246), rgb(255, 219, 250)); */
+  /* padding: 50px; */
+  /* width: 100%; */
+  /* padding: 95px; */
+  flex-direction: column;
 }
 .product-body1 .product-top .dfmBtn {
   padding: 5px 20px;
@@ -70,60 +67,44 @@
 
 .product-body2 {
   width: 100%;
-  height: 100%;
+  height: 60vh;
   display: flex;
   justify-content: center;
   position: relative;
-  top: 0;
+  top: 50px;
   font-family: "gordita", "sans-selif";
-  background-color: rgba(255, 219, 250, 0.2);
+  padding-bottom: 100px;
 }
 .product-body2 .product-left {
-  width: 50%;
+  width: 100%;
   height: 100%;
-  display: flex;
-  flex-direction: column;
   padding: 50px 0;
 }
 .product-body2 .product-left h3 {
   text-align: center;
+  font-size: 35px;
+  margin-bottom: 30px;
+  margin-top: 100px;
 }
 .product-body2 .product-left .option-container-nav {
-  margin: 20px 10%;
+  margin: 20px 5%;
   width: 100%;
+  height: 80vh;
 }
 .product-body2 .product-left .option-container-nav .nav-item {
   margin: auto;
   width: 40%;
   font-size: 12px;
 }
-.product-body2 .product-left .option-container-nav .nav-content {
+.product-body2 .product-left .option-container-nav .p2-nav-content {
   background: linear-gradient(45deg, rgb(100, 74, 246), rgb(255, 219, 250));
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   width: 80%;
-  margin: 10px;
-  background-color: rgba(255, 219, 250, 0.5);
+  margin: auto;
+  height: 85%;
+  overflow-y: scroll;
   border-radius: 20px;
-}
-#product > div > div > div > div.product-left > div > ul > li:nth-child(1) > button {
-
-  color: rgb(72, 70, 58) !important;
-  
-}
-
-#product > div > div > div > div.product-left > div > div > div > div > div.option-div > label {
-
-  color: black;
-
-}
-
-#product > div > div > div > div.product-left > div > div > div > div > p {
-  color: black;
-}
-
-#product > div > div > div > div.product-left > div > div > div > div > button.optionBtn.add {
-  color: black;
 }
 
 @media only screen and (max-width: 768px) {
@@ -144,17 +125,19 @@
   }
   .product-body2 {
     flex-direction: column;
-    top: 0;
   }
-  .product-body2 .product-left,
-  .product-body2 .product-right {
+  .product-body2 .product-left {
     width: 100%;
+    margin-top: 10%;
+  }
+  .product-body2 .product-left h3 {
+    font-size: 1.2rem;
   }
   .product-body2 .product-left .option-container-nav #navBtn {
-    color: black;
+    color: red;
   }
-  .product-body2 .nav-content {
-    height: 85%;
+  .product-body2 .p2-nav-content {
+    height: 100%;
   }
 }
 @media only screen and (max-width: 375px) {
@@ -173,21 +156,17 @@
   .product-body1 .product-bottom .contributor-div div {
     margin: 10px;
   }
+  .product-body2 {
+    top: 40%;
+  }
   .product-body2 .option-container {
-    height: 50%;
-    overflow-y: auto;
+    height: 100%;
   }
-  .product-body2 .nav-content {
-    height: 60%;
+  .product-body2 .p2-nav-content {
+    height: 80%;
   }
-  
-  
-
 }
-
-.MuiButtonBase-root {
-
-  background-color: red;
-  
-
-}   /*# sourceMappingURL=product.css.map */
+.pref-container .checkbox-div .checkbox-label {
+  font-size: 12px;
+  color: white;
+}/*# sourceMappingURL=product.css.map */
