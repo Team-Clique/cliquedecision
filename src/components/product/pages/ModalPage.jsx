@@ -103,8 +103,11 @@ function ModalPage({ handleClose, open, preference, goMainHandleClose, allRestau
               )}
             </div>
             <div className='modalBtn' style={{ display: 'flex', justifyContent: 'end' }}>
-              <Button className='right' onClick={goMainHandleClose}>
-                Awesome!
+
+        
+              <Button className="right" onClick={handleClose}>
+                <a href='/'> Awesome!</a>
+             
               </Button>
               <Button className="left" onClick={handleClose}>
                 Try again

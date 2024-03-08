@@ -13,6 +13,7 @@ import SignUp from "../views/inner-pages/features/miscellaneous/SignUp";
 import NotFound from "../views/NotFound";
 
 import FormSurveyLanding from "../views/all-home-pages/FormSurveyLanding";
+import SecondPage from "../components/product/pages/SecondPage";
 
 const AllRoutes = () => {
   return (
@@ -26,7 +27,7 @@ const AllRoutes = () => {
         {/* Feature Dropdown Routes */}
         <Route path="/login" element={<Login />} />
         <Route path="/SignUp" element={<SignUp />} />
-
+        <Route path="/SecondPage" element={<SecondPage/>}/>
 
         {/* Not Found Route */}
         <Route path="*" element={<NotFound />} />

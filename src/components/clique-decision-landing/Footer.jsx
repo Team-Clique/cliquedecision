@@ -19,11 +19,11 @@ const Footer = () => {
   return (
     <div className="d-lg-flex align-items-center justify-content-between">
       <div className="logo text-center">
-        <a href="index.html">
-          <img src="images/logo/deski_06.svg" alt="logo" />
-        </a>
+        {/* <a href="#">
+          <img src="images/logo/cliqueLogo.png" width={"120px"}  alt="logo" />
+        </a> */}
       </div>
-      <ul className="style-none footer-nav d-flex flex-wrap justify-content-center md-pt-10 md-pb-20">
+      {/* <ul className="style-none footer-nav d-flex flex-wrap justify-content-center md-pt-10 md-pb-20">
         <li>
           <Link to="/">Home</Link>
         </li>
@@ -36,7 +36,7 @@ const Footer = () => {
         <li>
           <Link to="/">Features</Link>
         </li>
-      </ul>
+      </ul> */}
       <ul className="d-flex justify-content-center social-icon style-none">
         {socialContent.map((val, i) => (
           <li key={i}>
