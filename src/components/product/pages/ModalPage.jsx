@@ -24,14 +24,12 @@ const decideRandom = (arr) => {
   return arr[randomIndex];
 };
 
-function ModalPage({ handleClose, open, preference, goMainHandleClose, allRestaurant }) {
+function ModalPage({ handleClose, open, preference, goMainHandleClose, allRestaurant, handleTryAgain }) {
   // Check if allRestaurant is defined and not null
   const filteredRestaurants = allRestaurant ? allRestaurant.filter(restaurant => restaurant.categories.some(cat => preference.includes(cat.alias))) : [];
 
   const selectedRestaurant = decideRandom(filteredRestaurants);
 
-
-  
   return (
     <div>
       <Modal
@@ -109,7 +107,7 @@ function ModalPage({ handleClose, open, preference, goMainHandleClose, allRestau
                 <a href='/'> Awesome!</a>
              
               </Button>
-              <Button className="left" onClick={handleClose}>
+              <Button className="left" onClick={handleTryAgain}>
                 Try again
               </Button>
               <Button className='closeButton' onClick={handleClose}>
