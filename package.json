@@ -18,7 +18,6 @@
     "aos": "^2.3.4",
     "axios": "^1.6.7",
     "bootstrap": "^5.2.3",
-    "express": "^4.18.3",
     "photoswipe": "^5.3.4",
     "react": "^18.2.0",
     "react-accessible-accordion": "^3.3.5",

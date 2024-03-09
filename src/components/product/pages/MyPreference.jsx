@@ -92,7 +92,7 @@ function MyPreference(props) {
                
 
                 {selectedCheckboxes.length > 0 &&
-                    <button className="decideBtn" onClick={handleOpen}>
+                    <button className="btn decideBtn" onClick={handleOpen}>
                         Decide for me <FontAwesomeIcon icon={faArrowRight} />
                     </button>
                 }
