@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import FormGroup from '@mui/material/FormGroup';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import Checkbox from '@mui/material/Checkbox';
@@ -17,7 +17,7 @@ function MyPreference(props) {
     const handleOpen = () => {
         let categories = selectedCheckboxes.filter(category => category !== 'no').join(',');
         if (categories === '') categories = 'restaurants'; // Default to 'restaurants' if no specific categories are selected
-        axios.get(`http://localhost:3002/searchRestaurant?categories=${categories}`)
+        axios.get(`https://clique-backend-9e7f0cecd4e1.herokuapp.com/searchRestaurant?categories=${categories}`)
             .then((response) => {
                 console.log(response.data);
                 setAllRestaurant(response.data.businesses); // Update allRestaurant state with fetched data
@@ -25,6 +25,16 @@ function MyPreference(props) {
             })
             .catch((err) => console.error(err));
     };
+
+    const handleTryAgain = () => {
+      const newRestaurants = [...allRestaurant]
+      newRestaurants.shift();
+      setAllRestaurant(newRestaurants);
+    }
+  
+    useEffect(() => {
+    
+    }, [allRestaurant])
 
     const handleClose = () => {
         setSelectedCheckboxes([]);
@@ -93,6 +103,7 @@ function MyPreference(props) {
                     handleClose={handleClose}
                     goMainHandleClose={goMainHandleClose}
                     allRestaurant={allRestaurant}
+                    handleTryAgain={handleTryAgain}
                 />
             </div>
         </div>
