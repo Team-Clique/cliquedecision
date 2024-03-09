@@ -18,20 +18,25 @@
   }
   
   .product-top {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 100%;
-    background: linear-gradient(
-      45deg,
-      rgba(100, 74, 246),
-      rgba(255, 219, 250)
-    );
-    padding: 50px;
+    background: linear-gradient(45deg, rgb(100, 74, 246), rgb(255, 219, 250));
+    padding: 100px;
+    /* width: 100%; */
+    /* background: linear-gradient(45deg, rgb(100, 74, 246), rgb(255, 219, 250)); */
+    /* padding: 50px; */
+    /* width: 100%; */
+    /* padding: 95px; */
+    flex-direction: column;
 
     .dfmBtn {
       padding: 5px 20px;
       margin: 10px;
       border-radius: 8px;
       cursor: pointer;
-      background-color: rgba(255, 203, 140);
+      background-color: rgb(255, 203, 140);
 
       border: none;
     }
@@ -71,29 +76,33 @@
 
 .product-body2 {
   width: 100%;
-  height: 100%;
+  height: 60vh;
   // padding-top: 30px;
   display: flex;
   justify-content: center;
   position: relative;
-  top: 0;
+  top: 50px;
   font-family: 'gordita', 'sans-selif';
-  background-color: rgba(255, 219, 250, 0.2);
+padding-bottom: 100px;
   .product-left {
-    width: 50%;
+    width: 100%;
     height: 100%;
-    display: flex;
-    flex-direction: column;
+    // display: flex;
+    // flex-direction: column;
     padding: 50px 0;
 
     h3 {
       // margin: 30px 50px;
       text-align: center;
+      font-size: 35px;
+      margin-bottom: 30px;
+      margin-top: 100px;
     }
 
     .option-container-nav {
-      margin: 20px 10%;
+      margin: 20px 5%;
       width: 100%;
+      height: 80vh;
 
       // display: flex;
 
@@ -102,31 +111,26 @@
         width: 40%;
         font-size: 12px;
       }
-      .nav-content {
+      .p2-nav-content {
         // margin: 5% 20%;
+        background: linear-gradient(45deg, rgb(100, 74, 246), rgb(255, 219, 250));
         display: flex;
-        justify-content: center;
+        justify-content: space-around;
         width: 80%;
-        margin: 10px;
-        background-color: rgba(255, 219, 250, 0.5);
+        margin: auto;
+        height: 85%;
+        overflow-y: scroll;
+        // margin-bottom: 100px;
+    
+ 
+        border-radius: 20px;
       }
     }
 
    
   }
 
-  .product-right {
-    width: 50%;
-    height: 100%;
-    margin: 0;
-    padding: 0;
-    background-color: rgba(100, 74, 246,0.8) ;
-    // background: linear-gradient(
-    //   45deg,
-    //   rgba(100, 74, 246),
-    //   rgba(255, 219, 250)
-    // );
-  }
+
 }
 
 @media only screen and (max-width: 768px) {
@@ -151,11 +155,19 @@
 
   .product-body2 {
     flex-direction: column;
-    top: 0;
+    // top: 2;
 
-    .product-left,
-    .product-right {
+    .product-left {
       width: 100%;
+      margin-top: 10%;
+      // margin-left:20%;
+   
+      h3{
+        font-size: 1.2rem;
+        // margin-top: 100px;;
+      }
+
+
     }
 
     .product-left {
@@ -166,8 +178,8 @@
       }
     }
 
-    .nav-content {
-      height: 85%;
+    .p2-nav-content {
+      height: 100%;
     }
   }
 }
@@ -194,18 +206,18 @@
     }
   }
   .product-body2 {
-
+    top: 40%;
     .option-container {
-      height: 50%;
-      overflow-y: auto;
+      height: 100%;
+      // overflow-y: auto;
     }
-    .nav-content {
-      height: 60%;
+    .p2-nav-content {
+      height: 80%;
     }
   }
 }
 
 .pref-container .checkbox-div .checkbox-label {
-  font-size: 14px;
+  font-size: 12px;
   color: white;
 }

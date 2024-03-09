@@ -1,8 +1,17 @@
 .pref-container {
     // margin: 10px;
-    margin-left: 35%;
-    padding: 30px 0;
-    height: 50%;
+    // margin-left: 0%;
+    display: flex;
+    flex-direction: column;
+
+
+    height: 80%;
+    width: 80%;
+    align-items: center;
+    padding: 20px;
+    border-radius: 20px;
+    background: linear-gradient(45deg, rgb(100, 74, 246), rgb(255, 219, 250));
+  
     
     h5,
     p {
@@ -11,7 +20,7 @@
       color: black;
     }
     p {
-      font-size: 12px;
+    font-size: 12px;
     }
     .checkbox-div {
         min-width: 500px;
@@ -19,7 +28,7 @@
           i {
             background-color: rgb(45, 43, 43);
             color: white;
-            font-size: 10px;
+            font-size: 8px;
             padding: 0 5px;
             text-align: center;
             width: fit-content;
@@ -29,17 +38,23 @@
         .checkbox-group {
           display: flex;
           flex-direction: column;
+          // overflow-y: scroll;
+          // height: 350px;
         }
-        .checkbox-label {
-            font-size: 14px; /* Adjust font size for smaller screens */
-          }
+   
+        .checkbox-label{
+          font-size: 10px;
+          color: rgb(48, 45, 45);
+        }
         .decideBtn {
-          margin-left: 20px;
-          background-color: rgba(239, 175, 175, 1);
+          // margin-left: 20px;
+           margin-left: 20%;
+          background-color: red;
           border-radius: 10px;
           color: white;
           font-size: 10px;
           width: 40%;
+          // margin-bottom: ;
         }
       }
       
@@ -48,15 +63,25 @@
 
 @media only screen and (max-width: 768px) {
     .pref-container{
-        margin-left: 60%;
+     
+      .checkbox-word{
         p{
-            font-size: 12px;
-        }
+          font-size: 10px;
+          margin-left: 30%;
+        
+         }
+         i{
+          font-size: 6px;
+          line-height: 10px;
+          display: block;
+         }
+
+      }
         h5{
             font-size: 15px;
         }
         .checkbox-group{
-          margin-left: 30px;
+          margin-left: 30%;
           
           .checkbox-label{
             float: left;
@@ -72,7 +97,7 @@
   @media only screen and (max-width: 375px) {
   
     .pref-container{
-        margin-left: 60%;
+        margin-left: 10%;
     
     }
   }

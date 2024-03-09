@@ -13,7 +13,6 @@
   font-size: 12px;
 }
 .option-container .optionInputBox {
-  overflow-y: auto;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -34,8 +33,8 @@
   font-size: 10px;
 }
 .option-container .optionInputBox .add {
-  border: 2px dotted black;
-  color: black;
+  border: 2px solid rgb(0, 0, 0);
+  color: rgb(0, 0, 0) !important;
   border-radius: 10px;
 }
 .option-container .optionInputBox .decide {
@@ -45,15 +44,12 @@
   font-size: 10px;
 }
 
-.closeButton {
-  padding-left: 10px;
-  color: rgb(231, 127, 0) !important;
- background-color: white !important;
+.option-container .optionInputBox .add {
+  border: 2px dotted rgb(255, 255, 255);
+  color: rgb(255, 255, 255);
+  border-radius: 10px;
 }
 
-.closeButton:hover {
-  
-  color:white !important;
- background-color: black!important;
-}
-/*# sourceMappingURL=decideBtw.css.map */
+.option-container .optionInputBox .add {
+  border: 2px dotted rgb(0, 0, 0) !important;
+}/*# sourceMappingURL=decideBtw.css.map */

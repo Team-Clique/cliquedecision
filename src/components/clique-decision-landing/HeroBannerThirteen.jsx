@@ -1,30 +1,40 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
+import Product from '../../components/product/Product';
+import SecondPage from '../product/pages/SecondPage';
 
 const HeroBannerThirteen = () => {
+  const [stage, setStage] = useState(0);
+
   return (
-    // <!--
-    // =============================================
-    //     Theme Hero Banner
-    // ==============================================
-    // -->
+
     <div className="hero-banner-thirteen lg-container" id="home">
       <div className="container">
         <div className="row">
+
+            {stage === 0 &&(
           <div className="col-lg-6">
-            
+    
+
             <h1 className="hero-heading">Come to decisions in a better way.</h1>
             <p className="hero-sub-heading">
-              Clique Decisions delivers quick & painless decisions for you 
+              CliqueDecison is option randomizer to help you pick between some
+              options!
             </p>
-            <a href="#" className="theme-btn-fourteen">
-              Get Started - It’s Free
+       
+             <a href="/SecondPage" className="theme-btn-fourteen">
+              Decide For Me
             </a>
-            <div className="info">No credit card required</div>
           </div>
+            )}
+            {stage === 1 &&
+             <div className="col-lg-6">
+                <SecondPage />
+             </div>
+             }
         </div>
 
-        <div className="screen-holder">
+        {/* <div className="screen-holder">
           <img
             src="images/assets/ils_22.svg"
             alt="illustration"
@@ -40,7 +50,7 @@ const HeroBannerThirteen = () => {
             alt="illustration"
             className="shapes shape-two"
           />
-        </div>
+        </div> */}
         {/* <!-- /.screen-holder --> */}
       </div>
     </div>

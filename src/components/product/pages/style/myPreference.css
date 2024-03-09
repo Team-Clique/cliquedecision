@@ -1,7 +1,12 @@
 .pref-container {
-  margin-left:30%;
-  padding: 30px 0;
-  height: 50%;
+  display: flex;
+  flex-direction: column;
+  height: 80%;
+  width: 80%;
+  align-items: center;
+  padding: 20px;
+  border-radius: 20px;
+  background: linear-gradient(45deg, rgb(100, 74, 246), rgb(255, 219, 250));
 }
 .pref-container h5,
 .pref-container p {
@@ -17,7 +22,7 @@
 .pref-container .checkbox-div .checkbox-word i {
   background-color: rgb(45, 43, 43);
   color: white;
-  font-size: 10px;
+  font-size: 8px;
   padding: 0 5px;
   text-align: center;
   width: -moz-fit-content;
@@ -28,11 +33,12 @@
   flex-direction: column;
 }
 .pref-container .checkbox-div .checkbox-label {
-  font-size: 14px; /* Adjust font size for smaller screens */
+  font-size: 10px;
+  color: rgb(48, 45, 45);
 }
 .pref-container .checkbox-div .decideBtn {
-  margin-left: 20px;
-  background-color: rgb(239, 175, 175);
+  margin-left: 20%;
+  background-color: red;
   border-radius: 10px;
   color: white;
   font-size: 10px;
@@ -40,17 +46,20 @@
 }
 
 @media only screen and (max-width: 768px) {
-  .pref-container {
-    margin-left: 50%;
+  .pref-container .checkbox-word p {
+    font-size: 10px;
+    margin-left: 30%;
   }
-  .pref-container p {
-    font-size: 12px;
+  .pref-container .checkbox-word i {
+    font-size: 6px;
+    line-height: 10px;
+    display: block;
   }
   .pref-container h5 {
     font-size: 15px;
   }
   .pref-container .checkbox-group {
-    margin-left: 30px;
+    margin-left: 30%;
   }
   .pref-container .checkbox-group .checkbox-label {
     float: left;
@@ -59,13 +68,6 @@
 }
 @media only screen and (max-width: 375px) {
   .pref-container {
-    margin-left: 60%;
+    margin-left: 10%;
   }
-
-  
 }/*# sourceMappingURL=myPreference.css.map */
-
-.pref-container .checkbox-div .checkbox-label {
-  font-size: 14px;
-  color: white;
-}

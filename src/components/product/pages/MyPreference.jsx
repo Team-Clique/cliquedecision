@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import FormGroup from '@mui/material/FormGroup';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import Checkbox from '@mui/material/Checkbox';
@@ -7,7 +7,7 @@ import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
 import ModalPage from './ModalPage';
 import axios from 'axios';
 import './style/myPreference.css';
-import styled from 'styled-components';
+// import styled from 'styled-components';
 
 function MyPreference(props) {
     const [open, setOpen] = useState(false);
@@ -17,7 +17,7 @@ function MyPreference(props) {
     const handleOpen = () => {
         let categories = selectedCheckboxes.filter(category => category !== 'no').join(',');
         if (categories === '') categories = 'restaurants'; // Default to 'restaurants' if no specific categories are selected
-        axios.get(`http://localhost:3002/searchRestaurant?categories=${categories}`)
+        axios.get(`https://clique-backend-9e7f0cecd4e1.herokuapp.com/searchRestaurant?categories=${categories}`)
             .then((response) => {
                 console.log(response.data);
                 setAllRestaurant(response.data.businesses); // Update allRestaurant state with fetched data
@@ -25,6 +25,16 @@ function MyPreference(props) {
             })
             .catch((err) => console.error(err));
     };
+
+    const handleTryAgain = () => {
+      const newRestaurants = [...allRestaurant]
+      newRestaurants.shift();
+      setAllRestaurant(newRestaurants);
+    }
+  
+    useEffect(() => {
+    
+    }, [allRestaurant])
 
     const handleClose = () => {
         setSelectedCheckboxes([]);
@@ -50,15 +60,18 @@ function MyPreference(props) {
     return (
         <div className="pref-container">
             <h5>Know my preferences</h5>
-            <p>Food preferences</p>
-            <div className="checkbox-div" style={{ overflow: 'wrap' }}>
+           
+            <div className="checkbox-div" >
+               
                 <div className="checkbox-word">
                     <p style={{ overflow: 'wrap', width: "300px" }}>
                         Select food type, and we will decide for you!{' '}
                         <i>Currently only serving the Bellevue, WA area</i>{' '}
                     </p>
                 </div>
-                <FormGroup className="checkbox-group">
+                <div>
+
+                <FormGroup className="checkbox-group" >
                     <FormControlLabel className="checkbox-label" control={<Checkbox value='mexican' onChange={handleChange} checked={selectedCheckboxes.includes("mexican")} />} label="Mexican" />
                     <FormControlLabel className="checkbox-label" control={<Checkbox value='chinese' onChange={handleChange} checked={selectedCheckboxes.includes("chinese")} />} label="Chinese" />
                     <FormControlLabel className="checkbox-label" control={<Checkbox value='japanese' onChange={handleChange} checked={selectedCheckboxes.includes("japanese")} />} label="Japanese" />
@@ -72,23 +85,26 @@ function MyPreference(props) {
                     <FormControlLabel className="checkbox-label" control={<Checkbox value='ramen' onChange={handleChange} checked={selectedCheckboxes.includes("ramen")} />} label="Ramen" />
                     <FormControlLabel className="checkbox-label" control={<Checkbox value='newamerican' onChange={handleChange} checked={selectedCheckboxes.includes("newamerican")} />} label="New American" />
                     <FormControlLabel className="checkbox-label" control={<Checkbox value='hotpot' onChange={handleChange} checked={selectedCheckboxes.includes("hotpot")} />} label="Hot pot" />
-                    <FormControlLabel className="checkbox-label" control={<Checkbox value='no' onChange={handleChange} checked={selectedCheckboxes.includes("no")} />} label="No preference" />
+                    {/* <FormControlLabel className="checkbox-label" control={<Checkbox value='no' onChange={handleChange} checked={selectedCheckboxes.includes("no")} />} label="No preference" /> */}
 
                 </FormGroup>
-                <ModalPage
+                </div>
+               
+
+                {selectedCheckboxes.length > 0 &&
+                    <button className="btn decideBtn" onClick={handleOpen}>
+                        Decide for me <FontAwesomeIcon icon={faArrowRight} />
+                    </button>
+                }
+                 <ModalPage
                     modalType={'preference'}
                     preference={selectedCheckboxes} // Pass selectedCheckboxes as preference
                     open={open}
                     handleClose={handleClose}
                     goMainHandleClose={goMainHandleClose}
                     allRestaurant={allRestaurant}
+                    handleTryAgain={handleTryAgain}
                 />
-
-                {selectedCheckboxes.length > 0 &&
-                    <button className="decideBtn" onClick={handleOpen}>
-                        Decide for me <FontAwesomeIcon icon={faArrowRight} />
-                    </button>
-                }
             </div>
         </div>
     );

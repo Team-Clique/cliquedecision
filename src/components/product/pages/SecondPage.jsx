@@ -1,39 +1,29 @@
 import React, {  useState } from 'react';
 import MyPreference from './MyPreference';
+import HeaderLandingFormSurvey from '../../clique-decision-landing/HeaderLandingFormSurvey';
 
 function SecondPage(props) {
-  const [opt, setOpt] = useState(0);
+ 
  
 
   return (
+    <div>
+    <HeaderLandingFormSurvey/>
     <div className="product-body2">
       <div className="product-left">
         <h3>So, What are we eating today?</h3>
         <div className="option-container-nav">
-          <ul className="nav nav-underline">
-            
-            <li className="nav-item">
-              <button
-                onClick={() => setOpt(1)}
-                className={`nav-link ${opt === 1 ? 'active' : ''}`}
-                style={{
-                  color: opt === 1 ? 'darkred' : 'lightcoral', // Apply different text colors
-                }}
-                data-bs-toggle="tab"
-              >
-                Just know my preference
-              </button>
-            </li>
-          </ul>
-          <div className='nav-content'>
-              <MyPreference setStage={props.setStage}/>
+        
+          <div className='nav-content' style={{marginLeft:"50px"}}>
+              <MyPreference />
               
           </div>
         </div>
       </div>
-      <div className='product-right'></div>
+   
       
       
+    </div>
     </div>
   );
 }
