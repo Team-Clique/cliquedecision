@@ -4,11 +4,6 @@ import { Routes, Route } from "react-router-dom";
 import ScrollTopBehaviour from "../components/ScrollTopBehaviour";
 
 
-// FEATURES DROPDOWN ALL ROUTES
-import Login from "../views/inner-pages/features/miscellaneous/Login";
-import SignUp from "../views/inner-pages/features/miscellaneous/SignUp";
-
-
 // Not Found Page
 import NotFound from "../views/NotFound";
 
@@ -25,8 +20,7 @@ const AllRoutes = () => {
 
 
         {/* Feature Dropdown Routes */}
-        <Route path="/login" element={<Login />} />
-        <Route path="/SignUp" element={<SignUp />} />
+     
         <Route path="/SecondPage" element={<SecondPage/>}/>
 
         {/* Not Found Route */}

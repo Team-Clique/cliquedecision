@@ -2,41 +2,47 @@
   font-size: 10px;
 }
 
+.restaurantInfo {
+  height: 20%;
+  width: 50%;
+  font-family: "gordita";
+}
 .restaurantInfo .restaurantName {
   color: rgb(167, 36, 0);
 }
 
 .restaurantImg img {
-  width: 200px;
+  width: 30%;
   height: 150px;
   background-color: grey;
+  margin-left: 50px;
 }
 
 .modalBtn {
-  font-size: 15px;
-}
-.modalBtn .left {
-  border: 2px solid rgb(238, 176, 99);
-  color: rgb(231, 127, 0);
-}
-.modalBtn .right {
-  background-color: rgb(238, 176, 99);
-  margin-left: 10px;
-  color: rgb(167, 36, 0);
+  font-size: 10px;
+  position: absolute;
+  right: 40px;
+  bottom: 50px;
 }
 
 @media only screen and (max-width: 768px) {
   .restaurantImg img {
-    width: 90%;
+    width: 100px;
     height: 100px;
     background-color: grey;
+    margin-left: 10px;
   }
   .modalBox {
     height: 60%;
   }
+  .restaurantInfo {
+    display: flex;
+    flex-direction: column;
+  }
   .modalBtn {
-    position: absolute;
-    bottom: 20px;
-    right: 10px;
+    display: flex;
+    align-items: center;
+    bottom: 50px;
+    right: 20px;
   }
 }/*# sourceMappingURL=modalPage.css.map */

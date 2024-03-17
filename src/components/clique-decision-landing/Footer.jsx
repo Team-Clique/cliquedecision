@@ -1,7 +1,8 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React from "react"; // Importing React library
 
+// Component for the footer section
 const Footer = () => {
+  // Social media icons and their respective links
   const socialContent = [
     {
       icon: "fa-facebook",
@@ -16,32 +17,16 @@ const Footer = () => {
       link: "https://www.linkedin.com/",
     },
   ];
+
   return (
-    <div className="d-lg-flex align-items-center justify-content-between">
-      <div className="logo text-center">
-        {/* <a href="#">
-          <img src="images/logo/cliqueLogo.png" width={"120px"}  alt="logo" />
-        </a> */}
+    <div className="d-lg-flex align-items-center justify-content-between"> {/* Container for footer content */}
+      <div className="logo text-center"> {/* Placeholder for logo */} 
       </div>
-      {/* <ul className="style-none footer-nav d-flex flex-wrap justify-content-center md-pt-10 md-pb-20">
-        <li>
-          <Link to="/">Home</Link>
-        </li>
-        <li>
-          <Link to="/">About us</Link>
-        </li>
-        <li>
-          <Link to="/">App</Link>
-        </li>
-        <li>
-          <Link to="/">Features</Link>
-        </li>
-      </ul> */}
-      <ul className="d-flex justify-content-center social-icon style-none">
+      <ul className="d-flex justify-content-center social-icon style-none"> {/* List of social media icons */}
         {socialContent.map((val, i) => (
           <li key={i}>
-            <a href={val.link} target="_blank" rel="noreferrer">
-              <i className={`fa ${val.icon}`}></i>
+            <a href={val.link} target="_blank" rel="noreferrer"> {/* Link to social media platforms */}
+              <i className={`fa ${val.icon}`}></i> {/* Social media icon */}
             </a>
           </li>
         ))}
@@ -50,4 +35,4 @@ const Footer = () => {
   );
 };
 
-export default Footer;
+export default Footer; // Exporting the Footer component as default

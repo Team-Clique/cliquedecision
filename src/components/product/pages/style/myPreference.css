@@ -37,12 +37,15 @@
   color: rgb(48, 45, 45);
 }
 .pref-container .checkbox-div .decideBtn {
-  margin-left: 20%;
-  background-color: red;
+  margin-left: 30%;
+  background-color: rgb(238, 176, 99);
   border-radius: 10px;
   color: white;
   font-size: 10px;
-  width: 40%;
+  width: 30%;
+}
+.pref-container .checkbox-div .decideBtn:hover {
+  background-color: rgb(234, 154, 56);
 }
 
 @media only screen and (max-width: 768px) {
@@ -65,9 +68,15 @@
     float: left;
     width: 30%;
   }
+  .pref-container .decideBtn {
+    margin-left: 40%;
+  }
 }
 @media only screen and (max-width: 375px) {
   .pref-container {
     margin-left: 10%;
+  }
+  .pref-container .checkbox-div .decideBtn {
+    margin-left: 40%;
   }
 }/*# sourceMappingURL=myPreference.css.map */
