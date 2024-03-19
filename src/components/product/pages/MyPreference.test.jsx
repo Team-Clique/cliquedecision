@@ -2,21 +2,26 @@ import React from 'react';
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import MyPreference from './MyPreference';
+import '@testing-library/jest-dom'
 
-test('renders MyPreference component', () => {
-  render(<MyPreference />);
-  const headingElement = screen.getByText(/Know my preferences/i);
-  expect(headingElement).toBeInTheDocument();
+describe('renders MyPreference component', () => {
+  it("should render MyPreference component correctly", () => {
+    render(<MyPreference />);
+    const headingElement = screen.getByText(/Know my preferences/i);
+    expect(headingElement).toBeInTheDocument();
+  })
 });
 
-test('selects checkboxes in MyPreference component', () => {
-  render(<MyPreference />);
-  const mexicanCheckbox = screen.getByLabelText('Mexican');
-  const chineseCheckbox = screen.getByLabelText('Chinese');
+describe('selects checkboxes in MyPreference component', () => {
+  it("should render MyPreference component correctly", () => {
+    render(<MyPreference />);
+    const mexicanCheckbox = screen.getByLabelText('Mexican');
+    const chineseCheckbox = screen.getByLabelText('Chinese');
 
-  userEvent.click(mexicanCheckbox);
-  userEvent.click(chineseCheckbox);
+    userEvent.click(mexicanCheckbox);
+    userEvent.click(chineseCheckbox);
 
-  expect(mexicanCheckbox).toBeChecked();
-  expect(chineseCheckbox).toBeChecked();
+    expect(mexicanCheckbox).toBeChecked();
+    expect(chineseCheckbox).toBeChecked();
+  })
 });

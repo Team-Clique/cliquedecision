@@ -1,9 +1,14 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react'; // Import necessary functions
+
+import '@testing-library/jest-dom' // missing import
+
 import ModalPage from './ModalPage';
 
-test('renders ModalPage component', () => {
-  render(<ModalPage open={true} />);
-  const headerElement = screen.getByText(/We Decided/i);
-  expect(headerElement).toBeInTheDocument(); // Ensure to import the toBeInTheDocument function
+describe('renders ModalPage component', () => {
+  it("should render ModalPage component correctly", () => {
+    render(<ModalPage open={true} />);
+    const headerElement = screen.getByText(/We Decided/i);
+    expect(headerElement).toBeInTheDocument(); // Ensure to import the toBeInTheDocument function
+  })
 });
